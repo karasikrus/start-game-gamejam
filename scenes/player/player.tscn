@@ -1,0 +1,91 @@
+[gd_scene load_steps=9 format=3 uid="uid://b5g8v7eto82ar"]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_fqkqd"]
+[ext_resource type="Texture2D" uid="uid://dh70b68u34110" path="res://scenes/player/character_idle.png" id="1_plqv3"]
+[ext_resource type="Texture2D" uid="uid://phm0d7diu1k1" path="res://scenes/player/arrow_up.png" id="3_qgfst"]
+[ext_resource type="Texture2D" uid="uid://ct8tdljnybhck" path="res://scenes/player/arrow_down.png" id="4_g7hkn"]
+
+[sub_resource type="Animation" id="Animation_vcvcp"]
+resource_name = "idle"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_dm4uy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xr3ra"]
+_data = {
+"RESET": SubResource("Animation_dm4uy"),
+"idle": SubResource("Animation_vcvcp")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_knkb5"]
+radius = 49.77
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_fqkqd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xr3ra")
+}
+autoplay = "idle"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(24, -20)
+texture = ExtResource("1_plqv3")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_knkb5")
+
+[node name="HelpSprites" type="Node2D" parent="."]
+
+[node name="ArrowUp" type="Sprite2D" parent="HelpSprites"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(2, -106)
+texture = ExtResource("3_qgfst")
+
+[node name="ArrowDown" type="Sprite2D" parent="HelpSprites"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(0, 118)
+texture = ExtResource("4_g7hkn")
+
+[node name="NoInputTimer" type="Timer" parent="HelpSprites"]
+unique_name_in_owner = true
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="HelpTimer" type="Timer" parent="HelpSprites"]
+unique_name_in_owner = true
+one_shot = true
+
+[connection signal="timeout" from="HelpSprites/NoInputTimer" to="." method="_on_no_input_timer_timeout"]
+[connection signal="timeout" from="HelpSprites/HelpTimer" to="." method="_on_help_timer_timeout"]

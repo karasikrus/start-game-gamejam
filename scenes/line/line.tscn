@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://g4mhy04oicu1"]
+
+[ext_resource type="Script" path="res://scenes/line/line.gd" id="1_jvwqk"]
+[ext_resource type="Texture2D" uid="uid://bnthrtmi33nar" path="res://scenes/line/line.png" id="1_pgkl6"]
+
+[node name="Line" type="Node2D"]
+script = ExtResource("1_jvwqk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_pgkl6")
+
+[node name="Notes" type="Node2D" parent="."]
+
+[node name="Note_1" type="Node2D" parent="Notes"]
+position = Vector2(0, -230)
+
+[node name="Note_2" type="Node2D" parent="Notes"]
+position = Vector2(0, -182)
+
+[node name="Note_3" type="Node2D" parent="Notes"]
+position = Vector2(0, -127)
+
+[node name="Note_4" type="Node2D" parent="Notes"]
+position = Vector2(-3, -80)
+
+[node name="Note_5" type="Node2D" parent="Notes"]
+position = Vector2(-3, -23)
+
+[node name="Note_6" type="Node2D" parent="Notes"]
+position = Vector2(-3, 28)
+
+[node name="Note_7" type="Node2D" parent="Notes"]
+position = Vector2(-3, 80)
+
+[node name="Note_8" type="Node2D" parent="Notes"]
+position = Vector2(-3, 126)
+
+[node name="Note_9" type="Node2D" parent="Notes"]
+position = Vector2(-3, 175)

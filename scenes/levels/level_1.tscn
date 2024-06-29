@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://6sldaajetfqs"]
+
+[ext_resource type="PackedScene" uid="uid://dnfuho5xbfy6p" path="res://scenes/note_track/note_track.tscn" id="1_yceu7"]
+[ext_resource type="PackedScene" uid="uid://g4mhy04oicu1" path="res://scenes/line/line.tscn" id="2_uwu1d"]
+[ext_resource type="PackedScene" uid="uid://b5g8v7eto82ar" path="res://scenes/player/player.tscn" id="3_8o3ro"]
+
+[node name="Level1" type="Node2D"]
+
+[node name="NoteTrack" parent="." instance=ExtResource("1_yceu7")]
+position = Vector2(960, 472)
+
+[node name="Line" parent="NoteTrack" instance=ExtResource("2_uwu1d")]
+position = Vector2(-880, 0)
+
+[node name="Notes" parent="NoteTrack/Line" index="1"]
+position = Vector2(0, -1)
+
+[node name="Player" parent="." node_paths=PackedStringArray("base_line") instance=ExtResource("3_8o3ro")]
+position = Vector2(77, 424)
+base_line = NodePath("../NoteTrack/Line")
+
+[editable path="NoteTrack/Line"]
