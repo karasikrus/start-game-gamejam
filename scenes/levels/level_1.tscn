@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://6sldaajetfqs"]
+[gd_scene load_steps=6 format=3 uid="uid://6sldaajetfqs"]
 
 [ext_resource type="Texture2D" uid="uid://rdi8k76csjf4" path="res://scenes/note_track/background.png" id="1_2ro6w"]
 [ext_resource type="PackedScene" uid="uid://dnfuho5xbfy6p" path="res://scenes/note_track/note_track.tscn" id="1_yceu7"]
 [ext_resource type="PackedScene" uid="uid://g4mhy04oicu1" path="res://scenes/line/line.tscn" id="2_uwu1d"]
 [ext_resource type="PackedScene" uid="uid://b5g8v7eto82ar" path="res://scenes/player/player.tscn" id="3_8o3ro"]
+[ext_resource type="PackedScene" uid="uid://bawh7v66qdrhs" path="res://scenes/rhythm_audio_stream_player/rhythm_audio_stream_player.tscn" id="5_cvr8o"]
 
 [node name="Level1" type="Node2D"]
 
@@ -23,5 +24,11 @@ position = Vector2(0, -1)
 [node name="Player" parent="." node_paths=PackedStringArray("base_line") instance=ExtResource("3_8o3ro")]
 position = Vector2(77, 424)
 base_line = NodePath("../NoteTrack/Line")
+
+[node name="MovingLines" type="Node2D" parent="." groups=["moving_lines"]]
+
+[node name="RhythmAudioStreamPlayer" parent="." node_paths=PackedStringArray("note_track") instance=ExtResource("5_cvr8o")]
+note_track = NodePath("../NoteTrack")
+moving_time = 4.0
 
 [editable path="NoteTrack/Line"]

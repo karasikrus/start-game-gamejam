@@ -1,0 +1,41 @@
+[gd_scene load_steps=9 format=3 uid="uid://bawh7v66qdrhs"]
+
+[ext_resource type="Script" path="res://scenes/rhythm_audio_stream_player/rhythm_audio_stream_player.gd" id="1_n8bio"]
+[ext_resource type="AudioStream" uid="uid://8o2mc7jl8fcb" path="res://scenes/rhythm_audio_stream_player/8Bit Easy Music.wav" id="1_win6m"]
+[ext_resource type="Script" path="res://scenes/rhythm_audio_stream_player/note_data.gd" id="3_56a4b"]
+
+[sub_resource type="Resource" id="Resource_qljjb"]
+script = ExtResource("3_56a4b")
+beat = 8
+note_position = 5
+visibility = 0
+
+[sub_resource type="Resource" id="Resource_mjuqr"]
+script = ExtResource("3_56a4b")
+beat = 12
+note_position = 3
+visibility = 1
+
+[sub_resource type="Resource" id="Resource_3edm5"]
+script = ExtResource("3_56a4b")
+beat = 16
+note_position = 5
+visibility = 0
+
+[sub_resource type="Resource" id="Resource_2wl4l"]
+script = ExtResource("3_56a4b")
+beat = 20
+note_position = 3
+visibility = 0
+
+[sub_resource type="Resource" id="Resource_u20py"]
+script = ExtResource("3_56a4b")
+beat = 24
+note_position = 5
+visibility = 0
+
+[node name="RhythmAudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_win6m")
+autoplay = true
+script = ExtResource("1_n8bio")
+notes_data = Array[ExtResource("3_56a4b")]([SubResource("Resource_qljjb"), SubResource("Resource_mjuqr"), SubResource("Resource_3edm5"), SubResource("Resource_2wl4l"), SubResource("Resource_u20py")])

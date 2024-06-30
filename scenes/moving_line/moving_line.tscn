@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bposiiblfi0hk"]
+
+[ext_resource type="PackedScene" uid="uid://g4mhy04oicu1" path="res://scenes/line/line.tscn" id="1_1fk5k"]
+[ext_resource type="Script" path="res://scenes/moving_line/moving_line.gd" id="1_d65j0"]
+[ext_resource type="PackedScene" uid="uid://drnw374vli8ee" path="res://scenes/note/note.tscn" id="3_vhfng"]
+
+[node name="MovingLine" type="Node2D"]
+script = ExtResource("1_d65j0")
+
+[node name="Line" parent="." instance=ExtResource("1_1fk5k")]
+
+[node name="Note" parent="." instance=ExtResource("3_vhfng")]
+position = Vector2(113, -61)
+
+[editable path="Line"]

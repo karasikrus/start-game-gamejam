@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dnfuho5xbfy6p"]
+[gd_scene load_steps=8 format=3 uid="uid://dnfuho5xbfy6p"]
 
 [ext_resource type="Script" path="res://scenes/note_track/note_track.gd" id="1_07msq"]
 [ext_resource type="Texture2D" uid="uid://dlqtsxabsijjk" path="res://scenes/note_track/staff.png" id="1_mxb7m"]
 [ext_resource type="Shader" path="res://scenes/note_track/note_track.gdshader" id="1_x116c"]
+[ext_resource type="PackedScene" uid="uid://bposiiblfi0hk" path="res://scenes/moving_line/moving_line.tscn" id="2_7w3vi"]
 [ext_resource type="Texture2D" uid="uid://bdf001sxcr2pm" path="res://scenes/note_track/dissolve_texture.png" id="2_ru43w"]
 [ext_resource type="Texture2D" uid="uid://w43rllilxaf3" path="res://scenes/note_track/background_water.png" id="3_jdrl2"]
 
@@ -13,6 +14,7 @@ shader_parameter/dissolve_texture = ExtResource("2_ru43w")
 
 [node name="NoteTrack" type="Node2D"]
 script = ExtResource("1_07msq")
+moving_line_scene = ExtResource("2_7w3vi")
 
 [node name="WaterSprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_s2djn")
@@ -23,3 +25,6 @@ texture = ExtResource("1_mxb7m")
 
 [node name="LineStart" type="Node2D" parent="."]
 position = Vector2(-914, 0)
+
+[node name="LineStart2" type="Node2D" parent="."]
+position = Vector2(894, 0)
