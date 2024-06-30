@@ -4,7 +4,6 @@ class_name Line
 @onready var notes = $Notes as Node2D
 var notes_array : Array[Node2D] = []
 
-
 func _ready():
 	for node in notes.get_children():
 		notes_array.push_back(node as Node2D)
