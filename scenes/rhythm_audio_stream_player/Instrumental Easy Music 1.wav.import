@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dk057ofyps3mr"
+path="res://.godot/imported/Instrumental Easy Music 1.wav-4f3c3b27abd1662ba37847aa03f72e20.sample"
+
+[deps]
+
+source_file="res://scenes/rhythm_audio_stream_player/Instrumental Easy Music 1.wav"
+dest_files=["res://.godot/imported/Instrumental Easy Music 1.wav-4f3c3b27abd1662ba37847aa03f72e20.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

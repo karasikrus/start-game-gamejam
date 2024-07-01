@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlupixpv8ybfm"]
+
+[ext_resource type="AudioStream" uid="uid://bcusffcqyf35f" path="res://scenes/extra_audio_stream_player/Instrumental Easy Music Epic 1.wav" id="1_72t1d"]
+[ext_resource type="Script" path="res://scenes/extra_audio_stream_player/extra_audio_stream_player.gd" id="1_ygjma"]
+
+[node name="ExtraAudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_72t1d")
+volume_db = -80.0
+bus = &"music"
+script = ExtResource("1_ygjma")

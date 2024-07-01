@@ -46,13 +46,14 @@ func move_to_note(note_number : int):
 
 
 func input_pressed():
+	no_input_timer.stop()
 	if is_help_shown:
 		if help_timer.time_left > 0:
 			return
 		help_timer.start()
 		return
 	else:
-		no_input_timer.start()
+		no_input_timer.stop()
 
 
 func _on_no_input_timer_timeout():
@@ -61,7 +62,7 @@ func _on_no_input_timer_timeout():
 
 func _on_help_timer_timeout():
 	is_help_shown = false
-	no_input_timer.start()
+	#no_input_timer.start()
 
 
 func animate_arrows():

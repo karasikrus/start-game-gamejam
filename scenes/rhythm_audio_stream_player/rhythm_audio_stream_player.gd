@@ -17,12 +17,14 @@ var sec_per_beat : float
 var last_reported_beat = 0
 var measure = 1
  
+var tween : Tween
 
 func _ready():
 	sec_per_beat = 60.0 / bpm
 	GlobalEvents.beat.connect(on_beat)
 	moving_time = sec_per_beat * 16
 	GlobalEvents.restart_combo()
+	GlobalEvents.combo.connect(combo_check)
 
 
 func _physics_process(delta):
@@ -58,3 +60,22 @@ func on_beat(beat_number : int):
 
 func _on_finished():
 	pass # Replace with function body.
+
+
+func combo_check(combo_num):
+	if combo_num == 0:
+		increase_sound()
+	elif combo_num == 5:
+		decrease_sound()
+		
+func decrease_sound():
+	if tween:
+		tween.kill()
+	tween = get_tree().create_tween()
+	tween.tween_property(self, "volume_db", -80, 0)
+
+func increase_sound():
+	if tween:
+		tween.kill()
+	tween = get_tree().create_tween()
+	tween.tween_property(self, "volume_db", 0, 0)

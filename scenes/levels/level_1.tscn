@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://6sldaajetfqs"]
+[gd_scene load_steps=8 format=3 uid="uid://6sldaajetfqs"]
 
 [ext_resource type="Texture2D" uid="uid://rdi8k76csjf4" path="res://scenes/note_track/background.png" id="1_2ro6w"]
 [ext_resource type="PackedScene" uid="uid://dnfuho5xbfy6p" path="res://scenes/note_track/note_track.tscn" id="1_yceu7"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b5g8v7eto82ar" path="res://scenes/player/player.tscn" id="3_8o3ro"]
 [ext_resource type="PackedScene" uid="uid://bawh7v66qdrhs" path="res://scenes/rhythm_audio_stream_player/rhythm_audio_stream_player.tscn" id="5_cvr8o"]
 [ext_resource type="PackedScene" uid="uid://uxpjrg1gife8" path="res://scenes/end_screen/end_screen.tscn" id="6_4ablm"]
+[ext_resource type="PackedScene" uid="uid://dlupixpv8ybfm" path="res://scenes/extra_audio_stream_player/extra_audio_stream_player.tscn" id="7_bihq0"]
 
 [node name="Level1" type="Node2D"]
 
@@ -39,5 +40,8 @@ offset_top = 1602.0
 offset_right = 1410.0
 offset_bottom = 1602.0
 player = NodePath("../RhythmAudioStreamPlayer")
+
+[node name="ExtraAudioStreamPlayer" parent="." instance=ExtResource("7_bihq0")]
+autoplay = true
 
 [editable path="NoteTrack/Line"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://bawh7v66qdrhs"]
 
-[ext_resource type="AudioStream" uid="uid://cfl2rhjqswou5" path="res://scenes/rhythm_audio_stream_player/8Bit Easy Music 3.wav" id="1_ikhyc"]
+[ext_resource type="AudioStream" uid="uid://dk057ofyps3mr" path="res://scenes/rhythm_audio_stream_player/Instrumental Easy Music 1.wav" id="1_0jpvu"]
 [ext_resource type="Script" path="res://scenes/rhythm_audio_stream_player/rhythm_audio_stream_player.gd" id="1_n8bio"]
 [ext_resource type="Script" path="res://scenes/rhythm_audio_stream_player/note_data.gd" id="3_56a4b"]
 
@@ -101,7 +101,7 @@ note_position = 0
 visibility = 1
 
 [node name="RhythmAudioStreamPlayer" type="AudioStreamPlayer"]
-stream = ExtResource("1_ikhyc")
+stream = ExtResource("1_0jpvu")
 autoplay = true
 bus = &"music"
 script = ExtResource("1_n8bio")
