@@ -21,7 +21,7 @@ var measure = 1
 func _ready():
 	sec_per_beat = 60.0 / bpm
 	GlobalEvents.beat.connect(on_beat)
-	moving_time = sec_per_beat * 8
+	moving_time = sec_per_beat * 16
 	GlobalEvents.restart_combo()
 
 

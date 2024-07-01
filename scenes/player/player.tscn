@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://b5g8v7eto82ar"]
+[gd_scene load_steps=12 format=3 uid="uid://b5g8v7eto82ar"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_fqkqd"]
 [ext_resource type="Texture2D" uid="uid://dh70b68u34110" path="res://scenes/player/character_idle.png" id="1_plqv3"]
+[ext_resource type="Texture2D" uid="uid://caa51rtcg6qsh" path="res://scenes/player/character_idle_super.png" id="3_eo1pe"]
 [ext_resource type="Texture2D" uid="uid://phm0d7diu1k1" path="res://scenes/player/arrow_up.png" id="3_qgfst"]
 [ext_resource type="Texture2D" uid="uid://ct8tdljnybhck" path="res://scenes/player/arrow_down.png" id="4_g7hkn"]
 
@@ -18,6 +19,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_plqv3")]
 }
 
 [sub_resource type="Animation" id="Animation_vcvcp"]
@@ -36,10 +49,52 @@ tracks/0/keys = {
 "update": 1,
 "values": [0, 1]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_plqv3")]
+}
+
+[sub_resource type="Animation" id="Animation_fy3fy"]
+resource_name = "combo"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_eo1pe")]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xr3ra"]
 _data = {
 "RESET": SubResource("Animation_dm4uy"),
+"combo": SubResource("Animation_fy3fy"),
 "idle": SubResource("Animation_vcvcp")
 }
 
@@ -95,6 +150,7 @@ unique_name_in_owner = true
 one_shot = true
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-18, 0)
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

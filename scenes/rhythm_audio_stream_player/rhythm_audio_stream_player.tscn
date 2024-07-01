@@ -1,50 +1,110 @@
-[gd_scene load_steps=10 format=3 uid="uid://bawh7v66qdrhs"]
+[gd_scene load_steps=20 format=3 uid="uid://bawh7v66qdrhs"]
 
+[ext_resource type="AudioStream" uid="uid://cfl2rhjqswou5" path="res://scenes/rhythm_audio_stream_player/8Bit Easy Music 3.wav" id="1_ikhyc"]
 [ext_resource type="Script" path="res://scenes/rhythm_audio_stream_player/rhythm_audio_stream_player.gd" id="1_n8bio"]
-[ext_resource type="AudioStream" uid="uid://8o2mc7jl8fcb" path="res://scenes/rhythm_audio_stream_player/8Bit Easy Music.wav" id="1_win6m"]
 [ext_resource type="Script" path="res://scenes/rhythm_audio_stream_player/note_data.gd" id="3_56a4b"]
 
 [sub_resource type="Resource" id="Resource_qljjb"]
 script = ExtResource("3_56a4b")
 beat = 8
-note_position = 5
+note_position = 9
 visibility = 0
 
 [sub_resource type="Resource" id="Resource_mjuqr"]
 script = ExtResource("3_56a4b")
 beat = 12
-note_position = 3
+note_position = 7
 visibility = 0
 
-[sub_resource type="Resource" id="Resource_3edm5"]
+[sub_resource type="Resource" id="Resource_qdb8q"]
 script = ExtResource("3_56a4b")
-beat = 24
-note_position = 5
+beat = 16
+note_position = 9
 visibility = 1
 
-[sub_resource type="Resource" id="Resource_2wl4l"]
+[sub_resource type="Resource" id="Resource_c18t7"]
 script = ExtResource("3_56a4b")
-beat = 28
-note_position = 3
+beat = 20
+note_position = 7
 visibility = 1
 
-[sub_resource type="Resource" id="Resource_u20py"]
+[sub_resource type="Resource" id="Resource_7x62e"]
 script = ExtResource("3_56a4b")
 beat = 40
-note_position = 5
-visibility = 0
+note_position = 6
+visibility = 1
 
-[sub_resource type="Resource" id="Resource_hly04"]
+[sub_resource type="Resource" id="Resource_kps1g"]
 script = ExtResource("3_56a4b")
 beat = 44
+note_position = 4
+visibility = 1
+
+[sub_resource type="Resource" id="Resource_8pf2h"]
+script = ExtResource("3_56a4b")
+beat = 48
+note_position = 6
+visibility = 1
+
+[sub_resource type="Resource" id="Resource_srig8"]
+script = ExtResource("3_56a4b")
+beat = 52
+note_position = 2
+visibility = 1
+
+[sub_resource type="Resource" id="Resource_nfrdf"]
+script = ExtResource("3_56a4b")
+beat = 72
+note_position = 7
+visibility = 1
+
+[sub_resource type="Resource" id="Resource_mog3c"]
+script = ExtResource("3_56a4b")
+beat = 76
+note_position = 5
+visibility = 1
+
+[sub_resource type="Resource" id="Resource_7tj5x"]
+script = ExtResource("3_56a4b")
+beat = 80
+note_position = 3
+visibility = 1
+
+[sub_resource type="Resource" id="Resource_68q6v"]
+script = ExtResource("3_56a4b")
+beat = 84
 note_position = 1
-visibility = 0
+visibility = 1
+
+[sub_resource type="Resource" id="Resource_2m4cb"]
+script = ExtResource("3_56a4b")
+beat = 104
+note_position = 6
+visibility = 1
+
+[sub_resource type="Resource" id="Resource_1fij7"]
+script = ExtResource("3_56a4b")
+beat = 108
+note_position = 2
+visibility = 1
+
+[sub_resource type="Resource" id="Resource_ii1fb"]
+script = ExtResource("3_56a4b")
+beat = 112
+note_position = 4
+visibility = 1
+
+[sub_resource type="Resource" id="Resource_86bc2"]
+script = ExtResource("3_56a4b")
+beat = 116
+note_position = 0
+visibility = 1
 
 [node name="RhythmAudioStreamPlayer" type="AudioStreamPlayer"]
-stream = ExtResource("1_win6m")
+stream = ExtResource("1_ikhyc")
 autoplay = true
 bus = &"music"
 script = ExtResource("1_n8bio")
-notes_data = Array[ExtResource("3_56a4b")]([SubResource("Resource_qljjb"), SubResource("Resource_mjuqr"), SubResource("Resource_3edm5"), SubResource("Resource_2wl4l"), SubResource("Resource_u20py"), SubResource("Resource_hly04")])
+notes_data = Array[ExtResource("3_56a4b")]([SubResource("Resource_qljjb"), SubResource("Resource_mjuqr"), SubResource("Resource_qdb8q"), SubResource("Resource_c18t7"), SubResource("Resource_7x62e"), SubResource("Resource_kps1g"), SubResource("Resource_8pf2h"), SubResource("Resource_srig8"), SubResource("Resource_nfrdf"), SubResource("Resource_mog3c"), SubResource("Resource_7tj5x"), SubResource("Resource_68q6v"), SubResource("Resource_2m4cb"), SubResource("Resource_1fij7"), SubResource("Resource_ii1fb"), SubResource("Resource_86bc2")])
 
 [connection signal="finished" from="." to="." method="_on_finished"]

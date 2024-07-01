@@ -7,6 +7,7 @@ class_name PLayer
 @onready var arrow_down = %ArrowDown
 @onready var no_input_timer = %NoInputTimer
 @onready var help_timer = %HelpTimer
+@onready var animation_player = $AnimationPlayer
 
 
 var current_note : int = 5
@@ -17,6 +18,7 @@ var is_help_shown := false
 func _ready():
 	max_note_num = base_line.get_notes_count() - 1
 	move_to_note(current_note)
+	GlobalEvents.combo.connect(combo_check)
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_down"):
@@ -69,3 +71,10 @@ func animate_arrows():
 		return
 	arrow_up.visible = current_note > 0
 	arrow_down.visible = current_note < max_note_num
+
+
+func combo_check(combo_num):
+	if combo_num == 0:
+		animation_player.play("idle")
+	elif combo_num == 5:
+		animation_player.play("combo")

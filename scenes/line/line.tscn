@@ -37,3 +37,6 @@ position = Vector2(-3, 126)
 
 [node name="Note_9" type="Node2D" parent="Notes"]
 position = Vector2(-3, 175)
+
+[node name="Note_10" type="Node2D" parent="Notes"]
+position = Vector2(-3, 222)
