@@ -12,11 +12,9 @@ var dissolve_value = 0
 var tween : Tween
 var property_path = "material/shader_parameter/dissolve_value"
 
-func _process(delta):
-	if Input.is_action_just_pressed("ui_left"):
-		appear()
-	if Input.is_action_just_pressed("ui_right"):
-		disapperar()
+func _ready():
+	GlobalEvents.combo.connect(combo_check)
+	disapperar()
 
 
 func appear():
@@ -44,3 +42,10 @@ func spawn_moving_line(note_position : int, note_visibility : int, moving_time :
 	moving_line_instance.global_position = line_start_2.global_position
 	moving_line_instance.set_note_position(note_position, note_visibility)
 	moving_line_instance.start_moving(moving_time, line_start.global_position)
+
+
+func combo_check(combo_num):
+	if combo_num == 0:
+		disapperar()
+	elif combo_num == 5:
+		appear()

@@ -121,16 +121,16 @@ _data = {
 "open_screen": SubResource("Animation_u6ytc")
 }
 
-[sub_resource type="Gradient" id="Gradient_q75ok"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_pd3vf"]
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_exdkq"]
-gradient = SubResource("Gradient_q75ok")
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_j0hsp"]
+noise = SubResource("FastNoiseLite_pd3vf")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_avi8e"]
 shader = ExtResource("2_qn1yy")
-shader_parameter/transition_color = Color(0.372549, 0, 0.25098, 1)
+shader_parameter/transition_color = Color(0.332031, 0.68689, 1, 1)
 shader_parameter/percent = 0.0
-shader_parameter/transition_texture = SubResource("GradientTexture1D_exdkq")
+shader_parameter/transition_texture = SubResource("NoiseTexture2D_j0hsp")
 
 [node name="SceneTransition" type="CanvasLayer"]
 process_mode = 3

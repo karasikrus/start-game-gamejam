@@ -21,6 +21,8 @@ var measure = 1
 func _ready():
 	sec_per_beat = 60.0 / bpm
 	GlobalEvents.beat.connect(on_beat)
+	moving_time = sec_per_beat * 8
+	GlobalEvents.restart_combo()
 
 
 func _physics_process(delta):
@@ -52,3 +54,7 @@ func on_beat(beat_number : int):
 	next_note_index += 1
 	prints(note_data.note_position, note_data.visibility)
 	note_track.spawn_moving_line(note_data.note_position, note_data.visibility, moving_time)
+
+
+func _on_finished():
+	pass # Replace with function body.

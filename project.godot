@@ -18,8 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 SceneTransition="*res://scenes/autoload/scene_transition.tscn"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 GlobalEvents="*res://scenes/autoload/global_events.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
@@ -34,8 +34,8 @@ layout/default_style="Default"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/viewport_width=2880
+window/size/viewport_height=1620
 window/size/window_width_override=960
 window/size/window_height_override=540
 window/stretch/mode="viewport"

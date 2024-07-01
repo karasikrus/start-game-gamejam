@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b5g8v7eto82ar"]
+[gd_scene load_steps=10 format=3 uid="uid://b5g8v7eto82ar"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_fqkqd"]
 [ext_resource type="Texture2D" uid="uid://dh70b68u34110" path="res://scenes/player/character_idle.png" id="1_plqv3"]
@@ -46,7 +46,13 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_knkb5"]
 radius = 49.77
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0r3gu"]
+radius = 16.0
+height = 52.0
+
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_fqkqd")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -61,6 +67,7 @@ texture = ExtResource("1_plqv3")
 hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_knkb5")
 
 [node name="HelpSprites" type="Node2D" parent="."]
@@ -86,6 +93,13 @@ autostart = true
 [node name="HelpTimer" type="Timer" parent="HelpSprites"]
 unique_name_in_owner = true
 one_shot = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_0r3gu")
 
 [connection signal="timeout" from="HelpSprites/NoInputTimer" to="." method="_on_no_input_timer_timeout"]
 [connection signal="timeout" from="HelpSprites/HelpTimer" to="." method="_on_help_timer_timeout"]
